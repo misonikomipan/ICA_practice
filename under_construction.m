@@ -3,18 +3,17 @@ clc;clear;
 step_size = 0.1;        %ステップサイズ
 num_iterations = 1;   %反復回数
 
-%データは1チャンネルでくるはず
 %filename = "sample_voice.wav";
 %[data1_vec,~]=audioread(filename1);
 %[data2_vec,~]=audioread(filename2);
 %data_matrix = [data1_vec.';data2_vec.'];
 
 
-data = [1,2;3,4;5,6;7,8];
-[num_data,~] = size(data); %num_dataは測定点の数
-data = data.';
+data = [1,2;3,4;5,6;7,8];   %データを合わせたもの
+[num_data,~] = size(data);  %num_dataは測定点の数
+data = data.'
 
-W_matrix = [1,1;1,1];
+W_matrix = [1,1;1,1]
 I_martrix = eye(2,2);
 
 
