@@ -1,7 +1,7 @@
 clc;clear;
 
 step = 0.1; %ステップサイズ
-rep = 20;   %反復回数
+rep = 30;   %反復回数
 
 [data1_vec,Fs]=audioread("combined_speech1.wav");
 [data2_vec,~]=audioread("combined_speech2.wav");
@@ -21,11 +21,14 @@ for i = 1:rep
         R = p_vec*y_vec.';
         E_mat = E_mat + R/t;
     end
-    W_mat = W_mat - step*(E_mat-I_mat)*W_mat
+    W_mat = W_mat - step*(E_mat-I_mat)*W_mat;
     distance_vec(i) = DKL(W_mat,data_mat);
 end
 
-distance_vec.'
+distance_vec.';
+
+
+
 plot(distance_vec)
 
 separate_mat = zeros(num_channel,num_data);
