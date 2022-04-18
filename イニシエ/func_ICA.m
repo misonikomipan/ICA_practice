@@ -18,7 +18,7 @@ for i = 1:rep
     E_mat = zeros(2);
     for t = 1:len_data
         y_vec = W_mat*data_mat(:,t);
-        p_vec = arrayfun(func_dif_score,data_mat(:,t));
+        p_vec = arrayfun(func_dif_score,y_vec);
         R = p_vec*y_vec.';
         E_mat = E_mat + R/len_data;
     end

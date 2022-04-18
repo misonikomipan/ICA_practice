@@ -17,16 +17,16 @@ for i = 1:rep
     E_mat = zeros(2);
     for t = 1:num_data
         y_vec = W_mat*data_mat(:,t);
-        p_vec = arrayfun(@func_dif_laplace,data_mat(:,t));
+        p_vec = arrayfun(@func_dif_laplace,y_vec);
         R = p_vec*y_vec.';
-        E_mat = E_mat + R/t;
+        E_mat = E_mat + R/num_data;
     end
     W_mat = W_mat - step*(E_mat-I_mat)*W_mat;
     distance_vec(i) = DKL(W_mat,data_mat);
 end
 
 figure;
-plot(distance_vec)
+plot(distance_vec);
 
 separate_mat = zeros(num_channel,num_data);
 for t = 1:num_data
