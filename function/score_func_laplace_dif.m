@@ -1,7 +1,3 @@
-function y = dif_laplace_func(x)
-    if x >= 0
-        y = 1;
-    else
-        y = -1;
-    end
+function y = score_func_laplace_dif(x)
+    y = x >= 0;
 end
