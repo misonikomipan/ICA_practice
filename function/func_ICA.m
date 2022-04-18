@@ -15,7 +15,7 @@ end
 
 func_picture(distance_vec);
 
-%breakupに分離信号を入れる
+
 breakup_mat = W_mat * data_mat;
 
 output_mat = breakup_mat'/max(abs(breakup_mat),[],"all");
