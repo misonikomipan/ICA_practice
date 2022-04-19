@@ -18,8 +18,17 @@ func_picture(distance_vec);
 breakup_mat = W_mat * data_mat;
 
 %-------------ここからプロジェクションバック法-----------------
+output_mat = zeros(num_data * num_data,len_data);
+inv_W = inv(W_mat);
+k = 1;
+for i = 1:num_data
+    for j = 1:num_data
+        output_mat(k,:) = inv_W(i,j)*breakup_mat(i,:);
+        k = k + 1;
+    end
+end
+%-----------------------------------------------------------
 
-output_mat = breakup_mat'/max(abs(breakup_mat),[],"all");
-
+output_mat = output_mat';
 
 end

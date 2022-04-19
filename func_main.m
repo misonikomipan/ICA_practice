@@ -2,6 +2,7 @@ function func_main(folder_name,step,rep,score_func,score_func_dif)
 
 data_list = dir(folder_name);
 [num_file,~] = size(data_list);
+addpath(folder_name);
 
 %listに謎の[.][..]ファイルがあるのでlist(3)からになってる
 [data_mat,Fs] = audioread(data_list(3).name);
@@ -15,8 +16,14 @@ addpath("function")
 get_data = func_ICA(data_mat,step,rep,score_func,score_func_dif);
 
 mkdir(folder_name + "_result");
-for i = 1:num_file-2 %ここの -2 は[.][..]を無視するため
-    audiowrite("./" + folder_name + "_result/result" + i + ".wav",get_data(:,i),Fs);
+k = 1;
+for i = 1:num_file-2
+    for j = 1:num_file-2
+        audiowrite("./" + folder_name + "_result/signal" + i + "_observed" + j + ".wav",get_data(:,k),Fs);
+        k = k + 1;
+    end
 end
+
+
 
 end
