@@ -15,10 +15,11 @@ end
 
 func_picture(distance_vec);
 
-
 breakup_mat = W_mat * data_mat;
+
+%-------------ここからプロジェクションバック法-----------------
 
 output_mat = breakup_mat'/max(abs(breakup_mat),[],"all");
 
-%スケール補正はもうええやろ。。。なんかうまくかけへん。。。
+
 end
