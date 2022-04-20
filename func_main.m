@@ -19,7 +19,7 @@ mkdir(folder_name + "_result");
 k = 1;
 for i = 1:num_file-2
     for j = 1:num_file-2
-        audiowrite("./" + folder_name + "_result/signal" + i + "_observed" + j + ".wav",get_data(:,k),Fs);
+        audiowrite("./" + folder_name + "_result/sig" + i + "_obs" + j + ".wav",get_data(:,k),Fs);
         k = k + 1;
     end
 end
