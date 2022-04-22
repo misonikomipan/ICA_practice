@@ -23,7 +23,7 @@ function [SDR,SIR,SAR,perm]=bss_eval_sources(se,s)
 % This software is distributed under the terms of the GNU Public License
 % version 3 (http://www.gnu.org/licenses/gpl.txt)
 % If you find it useful, please cite the following reference:
-% Emmanuel Vincent, Cédric Févotte and Rémi Gribonval, "Performance
+% Emmanuel Vincent, CÃ©dric FÃ©votte and RÃ©mi Gribonval, "Performance
 % measurement in blind audio source separation," IEEE Trans. on Audio,
 % Speech and Language Processing, 14(4):1462-1469, 2006.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
